@@ -7,18 +7,14 @@ from pathlib import Path
 import re
 import subprocess
 
+ACTOR_PAGES = {'Sakura-zz26': 'index.html'}
+
 def metadata():
-    actor = os.environ.get('GITHUB_ACTOR', 'local-learner')
-    owner = os.environ.get('GITHUB_REPOSITORY_OWNER', 'Sakura-zz26')
-    role = 'Solo learner' if actor == owner else 'Automation actor'
     timestamp = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')
     commit = subprocess.check_output(['git', 'rev-parse', '--short=12', 'HEAD'], text=True).strip()
     if not re.fullmatch(r'[0-9a-f]{7,40}', commit):
         raise ValueError('Unexpected source commit hash')
-    # Additional real contributors can be explicitly mapped here when present.
-    targets = {owner: 'index.html'}
-    target = targets.get(actor, 'index.html')
-    return actor, role, timestamp, commit, target
+    return timestamp, commit
 
 def update_html(root, actor, role, timestamp, commit, target):
     if target not in {'index.html', 'member1.html', 'member2.html'}:
@@ -40,7 +36,13 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('step', choices=['html', 'readme'])
     args = parser.parse_args()
-    actor, role, timestamp, commit, target = metadata()
+    actor = os.environ.get('GITHUB_ACTOR', '')
+    target = ACTOR_PAGES.get(actor)
+    if target is None:
+        print('Skipped: the actor is not configured for this solo exercise.')
+        return
+    role = 'Solo learner'
+    timestamp, commit = metadata()
     if args.step == 'html':
         update_html(Path('.'), actor, role, timestamp, commit, target)
         print(f'Updated {target} for actor {actor}')
