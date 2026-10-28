@@ -1,0 +1,890 @@
+Real command transcript; leader/member names are simulated workspaces.
+
+[leader] $ git init --initial-branch=main
+Initialized empty Git repository in /tmp/git-course-practice-bu_wzwro/leader/.git/
+[exit 0]
+
+[leader] $ git config user.name 'Codex assisted solo exercise'
+[exit 0]
+
+[leader] $ git config user.email 306978125+Sakura-zz26@users.noreply.github.com
+[exit 0]
+
+[leader] $ git remote add origin https://github.com/Sakura-zz26/pratice.git
+[exit 0]
+
+[leader] $ git remote -v
+origin	https://github.com/Sakura-zz26/pratice.git (fetch)
+origin	https://github.com/Sakura-zz26/pratice.git (push)
+[exit 0]
+
+[leader] $ git add .
+[exit 0]
+
+[leader] $ git commit -m 'Activity 1: initialize solo practice repository'
+[main (root-commit) 517b08c] Activity 1: initialize solo practice repository
+ 2 files changed, 11 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 index.html
+[exit 0]
+
+[leader] $ git rev-parse HEAD
+517b08ca59bd00cf080a25fea46136d2318b7a0c
+[exit 0]
+
+[leader] $ git push --set-upstream origin main:refs/heads/practice/run-40618585451-1/main
+branch 'main' set up to track 'origin/practice/run-40618585451-1/main'.
+remote: 
+remote: Create a pull request for 'practice/run-40618585451-1/main' on GitHub by visiting:        
+remote:      https://github.com/Sakura-zz26/pratice/pull/new/practice/run-40618585451-1/main        
+remote: 
+To https://github.com/Sakura-zz26/pratice.git
+ * [new branch]      main -> practice/run-40618585451-1/main
+[exit 0]
+
+[git-course-practice-bu_wzwro] $ git clone --branch practice/run-40618585451-1/main --single-branch https://github.com/Sakura-zz26/pratice.git /tmp/git-course-practice-bu_wzwro/member1
+Cloning into '/tmp/git-course-practice-bu_wzwro/member1'...
+[exit 0]
+
+[member1] $ git branch -m main
+[exit 0]
+
+[member1] $ git config remote.origin.fetch '+refs/heads/practice/run-40618585451-1/*:refs/remotes/origin/practice/run-40618585451-1/*'
+[exit 0]
+
+[member1] $ git config user.name 'Codex assisted solo exercise'
+[exit 0]
+
+[member1] $ git config user.email 306978125+Sakura-zz26@users.noreply.github.com
+[exit 0]
+
+[member1] $ git pull --ff-only
+Already up to date.
+[exit 0]
+
+[member1] $ git add .
+[exit 0]
+
+[member1] $ git commit -m 'Activity 2: commit from simulated member 1 workspace'
+[main 64a672d] Activity 2: commit from simulated member 1 workspace
+ 1 file changed, 2 insertions(+)
+[exit 0]
+
+[member1] $ git rev-parse HEAD
+64a672d28aa20bc5ecf8ff280400393f8e39abae
+[exit 0]
+
+[member1] $ git push origin main:refs/heads/practice/run-40618585451-1/main
+To https://github.com/Sakura-zz26/pratice.git
+   517b08c..64a672d  main -> practice/run-40618585451-1/main
+[exit 0]
+
+[leader] $ git pull --ff-only
+Updating 517b08c..64a672d
+Fast-forward
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+From https://github.com/Sakura-zz26/pratice
+   517b08c..64a672d  practice/run-40618585451-1/main -> origin/practice/run-40618585451-1/main
+ * [new branch]      main       -> origin/main
+[exit 0]
+
+[git-course-practice-bu_wzwro] $ git clone --branch practice/run-40618585451-1/main --single-branch https://github.com/Sakura-zz26/pratice.git /tmp/git-course-practice-bu_wzwro/member2
+Cloning into '/tmp/git-course-practice-bu_wzwro/member2'...
+[exit 0]
+
+[member2] $ git branch -m main
+[exit 0]
+
+[member2] $ git config remote.origin.fetch '+refs/heads/practice/run-40618585451-1/*:refs/remotes/origin/practice/run-40618585451-1/*'
+[exit 0]
+
+[member2] $ git config user.name 'Codex assisted solo exercise'
+[exit 0]
+
+[member2] $ git config user.email 306978125+Sakura-zz26@users.noreply.github.com
+[exit 0]
+
+[member2] $ git pull --ff-only
+Already up to date.
+[exit 0]
+
+[member2] $ git add .
+[exit 0]
+
+[member2] $ git commit -m 'Activity 2: commit from simulated member 2 workspace'
+[main 392a34a] Activity 2: commit from simulated member 2 workspace
+ 1 file changed, 2 insertions(+)
+[exit 0]
+
+[member2] $ git rev-parse HEAD
+392a34a157389ecc47dab7cb1a37354f001cad61
+[exit 0]
+
+[member2] $ git push origin main:refs/heads/practice/run-40618585451-1/main
+To https://github.com/Sakura-zz26/pratice.git
+   64a672d..392a34a  main -> practice/run-40618585451-1/main
+[exit 0]
+
+[leader] $ git pull --ff-only
+Updating 64a672d..392a34a
+Fast-forward
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+From https://github.com/Sakura-zz26/pratice
+   64a672d..392a34a  practice/run-40618585451-1/main -> origin/practice/run-40618585451-1/main
+[exit 0]
+
+[member1] $ git pull --ff-only
+Updating 64a672d..392a34a
+Fast-forward
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+From https://github.com/Sakura-zz26/pratice
+   64a672d..392a34a  practice/run-40618585451-1/main -> origin/practice/run-40618585451-1/main
+[exit 0]
+
+[member2] $ git pull --ff-only
+Already up to date.
+[exit 0]
+
+[leader] $ git switch -c leader-feature
+Switched to a new branch 'leader-feature'
+[exit 0]
+
+[leader] $ git add .
+[exit 0]
+
+[leader] $ git commit -m 'Activity 3: add leader HTML feature'
+[leader-feature 40c657c] Activity 3: add leader HTML feature
+ 1 file changed, 8 insertions(+)
+ create mode 100644 leader.html
+[exit 0]
+
+[leader] $ git rev-parse HEAD
+40c657c84e7d4896e4e9352764ce3c500015723e
+[exit 0]
+
+[leader] $ git push origin leader-feature:refs/heads/practice/run-40618585451-1/leader-feature
+remote: 
+remote: Create a pull request for 'practice/run-40618585451-1/leader-feature' on GitHub by visiting:        
+remote:      https://github.com/Sakura-zz26/pratice/pull/new/practice/run-40618585451-1/leader-feature        
+remote: 
+To https://github.com/Sakura-zz26/pratice.git
+ * [new branch]      leader-feature -> practice/run-40618585451-1/leader-feature
+[exit 0]
+
+[leader] $ git switch main
+Your branch is up to date with 'origin/practice/run-40618585451-1/main'.
+Switched to branch 'main'
+[exit 0]
+
+[leader] $ git merge --no-ff leader-feature -m 'Activity 3: merge leader feature'
+Merge made by the 'ort' strategy.
+ leader.html | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+ create mode 100644 leader.html
+[exit 0]
+
+[leader] $ git push origin main:refs/heads/practice/run-40618585451-1/main
+To https://github.com/Sakura-zz26/pratice.git
+   392a34a..93f1d75  main -> practice/run-40618585451-1/main
+[exit 0]
+
+[member1] $ git pull --ff-only
+Updating 392a34a..93f1d75
+Fast-forward
+ leader.html | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+ create mode 100644 leader.html
+From https://github.com/Sakura-zz26/pratice
+   392a34a..93f1d75  practice/run-40618585451-1/main -> origin/practice/run-40618585451-1/main
+ * [new branch]      practice/run-40618585451-1/leader-feature -> origin/practice/run-40618585451-1/leader-feature
+[exit 0]
+
+[member1] $ git switch -c member1-feature
+Switched to a new branch 'member1-feature'
+[exit 0]
+
+[member1] $ git add .
+[exit 0]
+
+[member1] $ git commit -m 'Activity 3: add simulated member 1 feature'
+[member1-feature 61def8a] Activity 3: add simulated member 1 feature
+ 1 file changed, 8 insertions(+)
+ create mode 100644 member1.html
+[exit 0]
+
+[member1] $ git rev-parse HEAD
+61def8ac316c909619d021075f5c032f53870aa3
+[exit 0]
+
+[member1] $ git push origin member1-feature:refs/heads/practice/run-40618585451-1/member1-feature
+remote: 
+remote: Create a pull request for 'practice/run-40618585451-1/member1-feature' on GitHub by visiting:        
+remote:      https://github.com/Sakura-zz26/pratice/pull/new/practice/run-40618585451-1/member1-feature        
+remote: 
+To https://github.com/Sakura-zz26/pratice.git
+ * [new branch]      member1-feature -> practice/run-40618585451-1/member1-feature
+[exit 0]
+
+[leader] $ git fetch origin practice/run-40618585451-1/member1-feature
+From https://github.com/Sakura-zz26/pratice
+ * branch            practice/run-40618585451-1/member1-feature -> FETCH_HEAD
+ * [new branch]      practice/run-40618585451-1/member1-feature -> origin/practice/run-40618585451-1/member1-feature
+[exit 0]
+
+[leader] $ git merge --no-ff FETCH_HEAD -m 'Activity 3: merge member 1 feature'
+Merge made by the 'ort' strategy.
+ member1.html | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+ create mode 100644 member1.html
+[exit 0]
+
+[leader] $ git push origin main:refs/heads/practice/run-40618585451-1/main
+To https://github.com/Sakura-zz26/pratice.git
+   93f1d75..b755ed2  main -> practice/run-40618585451-1/main
+[exit 0]
+
+[member1] $ git switch main
+Your branch is up to date with 'origin/practice/run-40618585451-1/main'.
+Switched to branch 'main'
+[exit 0]
+
+[member2] $ git pull --ff-only
+Updating 392a34a..b755ed2
+Fast-forward
+ leader.html  | 8 ++++++++
+ member1.html | 8 ++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 leader.html
+ create mode 100644 member1.html
+From https://github.com/Sakura-zz26/pratice
+   392a34a..b755ed2  practice/run-40618585451-1/main -> origin/practice/run-40618585451-1/main
+ * [new branch]      practice/run-40618585451-1/leader-feature -> origin/practice/run-40618585451-1/leader-feature
+ * [new branch]      practice/run-40618585451-1/member1-feature -> origin/practice/run-40618585451-1/member1-feature
+[exit 0]
+
+[member2] $ git switch -c member2-feature
+Switched to a new branch 'member2-feature'
+[exit 0]
+
+[member2] $ git add .
+[exit 0]
+
+[member2] $ git commit -m 'Activity 3: add simulated member 2 feature'
+[member2-feature 811641a] Activity 3: add simulated member 2 feature
+ 1 file changed, 8 insertions(+)
+ create mode 100644 member2.html
+[exit 0]
+
+[member2] $ git rev-parse HEAD
+811641a43289578c35caa9d52c37be85872d6b44
+[exit 0]
+
+[member2] $ git push origin member2-feature:refs/heads/practice/run-40618585451-1/member2-feature
+remote: 
+remote: Create a pull request for 'practice/run-40618585451-1/member2-feature' on GitHub by visiting:        
+remote:      https://github.com/Sakura-zz26/pratice/pull/new/practice/run-40618585451-1/member2-feature        
+remote: 
+To https://github.com/Sakura-zz26/pratice.git
+ * [new branch]      member2-feature -> practice/run-40618585451-1/member2-feature
+[exit 0]
+
+[leader] $ git fetch origin practice/run-40618585451-1/member2-feature
+From https://github.com/Sakura-zz26/pratice
+ * branch            practice/run-40618585451-1/member2-feature -> FETCH_HEAD
+ * [new branch]      practice/run-40618585451-1/member2-feature -> origin/practice/run-40618585451-1/member2-feature
+[exit 0]
+
+[leader] $ git merge --no-ff FETCH_HEAD -m 'Activity 3: merge member 2 feature'
+Merge made by the 'ort' strategy.
+ member2.html | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+ create mode 100644 member2.html
+[exit 0]
+
+[leader] $ git push origin main:refs/heads/practice/run-40618585451-1/main
+To https://github.com/Sakura-zz26/pratice.git
+   b755ed2..7b3f131  main -> practice/run-40618585451-1/main
+[exit 0]
+
+[member2] $ git switch main
+Your branch is up to date with 'origin/practice/run-40618585451-1/main'.
+Switched to branch 'main'
+[exit 0]
+
+[member1] $ git pull --ff-only
+Updating 93f1d75..7b3f131
+Fast-forward
+ member1.html | 8 ++++++++
+ member2.html | 8 ++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 member1.html
+ create mode 100644 member2.html
+From https://github.com/Sakura-zz26/pratice
+   93f1d75..7b3f131  practice/run-40618585451-1/main -> origin/practice/run-40618585451-1/main
+ * [new branch]      practice/run-40618585451-1/member2-feature -> origin/practice/run-40618585451-1/member2-feature
+[exit 0]
+
+[member2] $ git pull --ff-only
+Updating b755ed2..7b3f131
+Fast-forward
+ member2.html | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+ create mode 100644 member2.html
+From https://github.com/Sakura-zz26/pratice
+   b755ed2..7b3f131  practice/run-40618585451-1/main -> origin/practice/run-40618585451-1/main
+[exit 0]
+
+[leader] $ git add .
+[exit 0]
+
+[leader] $ git commit -m 'Activity 4: title update before amendment'
+[main 7e96a46] Activity 4: title update before amendment
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[exit 0]
+
+[leader] $ git rev-parse HEAD
+7e96a467eda4816c2363e1fa8c25277cb30020ae
+[exit 0]
+
+[leader] $ git push origin main:refs/heads/practice/run-40618585451-1/main
+To https://github.com/Sakura-zz26/pratice.git
+   7b3f131..7e96a46  main -> practice/run-40618585451-1/main
+[exit 0]
+
+[leader] $ git push origin HEAD:refs/heads/practice/run-40618585451-1/before-amend
+remote: 
+remote: Create a pull request for 'practice/run-40618585451-1/before-amend' on GitHub by visiting:        
+remote:      https://github.com/Sakura-zz26/pratice/pull/new/practice/run-40618585451-1/before-amend        
+remote: 
+To https://github.com/Sakura-zz26/pratice.git
+ * [new branch]      HEAD -> practice/run-40618585451-1/before-amend
+[exit 0]
+
+[leader] $ git add index.html
+[exit 0]
+
+[leader] $ git commit --amend -m 'Activity 4: correct title and add missing description'
+[main 7f195ce] Activity 4: correct title and add missing description
+ Date: Wed Oct 28 02:02:59 2026 +0000
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+[exit 0]
+
+[leader] $ git rev-parse HEAD
+7f195ce4daa06b97b4c65d95a5ccbdd72dfd3b9d
+[exit 0]
+
+[leader] $ git push --force-with-lease=refs/heads/practice/run-40618585451-1/main:7e96a467eda4816c2363e1fa8c25277cb30020ae origin HEAD:refs/heads/practice/run-40618585451-1/main
+To https://github.com/Sakura-zz26/pratice.git
+ + 7e96a46...7f195ce HEAD -> practice/run-40618585451-1/main (forced update)
+[exit 0]
+
+[member1] $ git fetch origin
+From https://github.com/Sakura-zz26/pratice
+   7b3f131..7f195ce  practice/run-40618585451-1/main -> origin/practice/run-40618585451-1/main
+ * [new branch]      practice/run-40618585451-1/before-amend -> origin/practice/run-40618585451-1/before-amend
+[exit 0]
+
+[member1] $ git switch main
+Your branch is behind 'origin/practice/run-40618585451-1/main' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+Already on 'main'
+[exit 0]
+
+[member1] $ git reset --hard origin/practice/run-40618585451-1/main
+HEAD is now at 7f195ce Activity 4: correct title and add missing description
+[exit 0]
+
+[member1] $ git add .
+[exit 0]
+
+[member1] $ git commit -m 'Activity 4: accidental addition for revert demonstration'
+[main ff54575] Activity 4: accidental addition for revert demonstration
+ 1 file changed, 1 insertion(+)
+[exit 0]
+
+[member1] $ git rev-parse HEAD
+ff54575627b72a8bcaf45f33310fe2b3989c86a3
+[exit 0]
+
+[member1] $ git push origin main:refs/heads/practice/run-40618585451-1/main
+To https://github.com/Sakura-zz26/pratice.git
+   7f195ce..ff54575  main -> practice/run-40618585451-1/main
+[exit 0]
+
+[member1] $ git log --oneline -4
+ff54575 Activity 4: accidental addition for revert demonstration
+7f195ce Activity 4: correct title and add missing description
+7b3f131 Activity 3: merge member 2 feature
+811641a Activity 3: add simulated member 2 feature
+[exit 0]
+
+[member1] $ git revert --no-edit ff54575627b72a8bcaf45f33310fe2b3989c86a3
+[main b6a10f6] Revert "Activity 4: accidental addition for revert demonstration"
+ Date: Wed Oct 28 02:03:04 2026 +0000
+ 1 file changed, 1 deletion(-)
+[exit 0]
+
+[member1] $ git rev-parse HEAD
+b6a10f63b2cb5c838413121525ff66bedead7d7f
+[exit 0]
+
+[member1] $ git push origin main:refs/heads/practice/run-40618585451-1/main
+To https://github.com/Sakura-zz26/pratice.git
+   ff54575..b6a10f6  main -> practice/run-40618585451-1/main
+[exit 0]
+
+[member2] $ git fetch origin
+From https://github.com/Sakura-zz26/pratice
+   7b3f131..b6a10f6  practice/run-40618585451-1/main -> origin/practice/run-40618585451-1/main
+ * [new branch]      practice/run-40618585451-1/before-amend -> origin/practice/run-40618585451-1/before-amend
+[exit 0]
+
+[member2] $ git switch main
+Your branch is behind 'origin/practice/run-40618585451-1/main' by 3 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+Already on 'main'
+[exit 0]
+
+[member2] $ git reset --hard origin/practice/run-40618585451-1/main
+HEAD is now at b6a10f6 Revert "Activity 4: accidental addition for revert demonstration"
+[exit 0]
+
+[member2] $ git rev-parse HEAD
+b6a10f63b2cb5c838413121525ff66bedead7d7f
+[exit 0]
+
+[member2] $ git add .
+[exit 0]
+
+[member2] $ git commit -m 'Activity 4: unnecessary commit for reset demonstration'
+[main ac5cfca] Activity 4: unnecessary commit for reset demonstration
+ 1 file changed, 1 insertion(+)
+ create mode 100644 temporary.txt
+[exit 0]
+
+[member2] $ git rev-parse HEAD
+ac5cfcac502063c73994c61708d5d0e5fc5a019f
+[exit 0]
+
+[member2] $ git push origin main:refs/heads/practice/run-40618585451-1/main
+To https://github.com/Sakura-zz26/pratice.git
+   b6a10f6..ac5cfca  main -> practice/run-40618585451-1/main
+[exit 0]
+
+[member2] $ git push origin HEAD:refs/heads/practice/run-40618585451-1/before-reset
+remote: 
+remote: Create a pull request for 'practice/run-40618585451-1/before-reset' on GitHub by visiting:        
+remote:      https://github.com/Sakura-zz26/pratice/pull/new/practice/run-40618585451-1/before-reset        
+remote: 
+To https://github.com/Sakura-zz26/pratice.git
+ * [new branch]      HEAD -> practice/run-40618585451-1/before-reset
+[exit 0]
+
+[member2] $ git log --oneline -3
+ac5cfca Activity 4: unnecessary commit for reset demonstration
+b6a10f6 Revert "Activity 4: accidental addition for revert demonstration"
+ff54575 Activity 4: accidental addition for revert demonstration
+[exit 0]
+
+[member2] $ git reset --hard b6a10f63b2cb5c838413121525ff66bedead7d7f
+HEAD is now at b6a10f6 Revert "Activity 4: accidental addition for revert demonstration"
+[exit 0]
+
+[member2] $ git push --force-with-lease=refs/heads/practice/run-40618585451-1/main:ac5cfcac502063c73994c61708d5d0e5fc5a019f origin HEAD:refs/heads/practice/run-40618585451-1/main
+To https://github.com/Sakura-zz26/pratice.git
+ + ac5cfca...b6a10f6 HEAD -> practice/run-40618585451-1/main (forced update)
+[exit 0]
+
+[leader] $ git fetch origin
+From https://github.com/Sakura-zz26/pratice
+   7f195ce..b6a10f6  practice/run-40618585451-1/main -> origin/practice/run-40618585451-1/main
+ * [new branch]      practice/run-40618585451-1/before-reset -> origin/practice/run-40618585451-1/before-reset
+[exit 0]
+
+[leader] $ git switch main
+Your branch is behind 'origin/practice/run-40618585451-1/main' by 2 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+Already on 'main'
+[exit 0]
+
+[leader] $ git reset --hard origin/practice/run-40618585451-1/main
+HEAD is now at b6a10f6 Revert "Activity 4: accidental addition for revert demonstration"
+[exit 0]
+
+[leader] $ git log --oneline -5
+b6a10f6 Revert "Activity 4: accidental addition for revert demonstration"
+ff54575 Activity 4: accidental addition for revert demonstration
+7f195ce Activity 4: correct title and add missing description
+7b3f131 Activity 3: merge member 2 feature
+811641a Activity 3: add simulated member 2 feature
+[exit 0]
+
+[leader] $ git checkout 517b08ca59bd00cf080a25fea46136d2318b7a0c
+Note: switching to '517b08ca59bd00cf080a25fea46136d2318b7a0c'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 517b08c Activity 1: initialize solo practice repository
+[exit 0]
+
+[leader] $ git switch main
+Your branch is up to date with 'origin/practice/run-40618585451-1/main'.
+Previous HEAD position was 517b08c Activity 1: initialize solo practice repository
+Switched to branch 'main'
+[exit 0]
+
+[member1] $ git fetch origin
+From https://github.com/Sakura-zz26/pratice
+ * [new branch]      practice/run-40618585451-1/before-reset -> origin/practice/run-40618585451-1/before-reset
+[exit 0]
+
+[member1] $ git switch main
+Your branch is up to date with 'origin/practice/run-40618585451-1/main'.
+Already on 'main'
+[exit 0]
+
+[member1] $ git reset --hard origin/practice/run-40618585451-1/main
+HEAD is now at b6a10f6 Revert "Activity 4: accidental addition for revert demonstration"
+[exit 0]
+
+[member2] $ git fetch origin
+[exit 0]
+
+[member2] $ git switch main
+Your branch is up to date with 'origin/practice/run-40618585451-1/main'.
+Already on 'main'
+[exit 0]
+
+[member2] $ git reset --hard origin/practice/run-40618585451-1/main
+HEAD is now at b6a10f6 Revert "Activity 4: accidental addition for revert demonstration"
+[exit 0]
+
+[member1] $ git switch -c member1-rebase
+Switched to a new branch 'member1-rebase'
+[exit 0]
+
+[member1] $ git add .
+[exit 0]
+
+[member1] $ git commit -m 'Activity 5: edit the shared member1 paragraph on a feature branch'
+[member1-rebase fbe6798] Activity 5: edit the shared member1 paragraph on a feature branch
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[exit 0]
+
+[member1] $ git rev-parse HEAD
+fbe679876d6e617959bbdd5f2586d9da2aef22af
+[exit 0]
+
+[member1] $ git push origin HEAD:refs/heads/practice/run-40618585451-1/member1-rebase
+remote: 
+remote: Create a pull request for 'practice/run-40618585451-1/member1-rebase' on GitHub by visiting:        
+remote:      https://github.com/Sakura-zz26/pratice/pull/new/practice/run-40618585451-1/member1-rebase        
+remote: 
+To https://github.com/Sakura-zz26/pratice.git
+ * [new branch]      HEAD -> practice/run-40618585451-1/member1-rebase
+[exit 0]
+
+[member2] $ git switch -c member2-rebase
+Switched to a new branch 'member2-rebase'
+[exit 0]
+
+[member2] $ git add .
+[exit 0]
+
+[member2] $ git commit -m 'Activity 5: edit the shared index heading on a feature branch'
+[member2-rebase be1ae39] Activity 5: edit the shared index heading on a feature branch
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[exit 0]
+
+[member2] $ git rev-parse HEAD
+be1ae39296aa71837e624be35a04c0df15f54aed
+[exit 0]
+
+[member2] $ git push origin HEAD:refs/heads/practice/run-40618585451-1/member2-rebase
+remote: 
+remote: Create a pull request for 'practice/run-40618585451-1/member2-rebase' on GitHub by visiting:        
+remote:      https://github.com/Sakura-zz26/pratice/pull/new/practice/run-40618585451-1/member2-rebase        
+remote: 
+To https://github.com/Sakura-zz26/pratice.git
+ * [new branch]      HEAD -> practice/run-40618585451-1/member2-rebase
+[exit 0]
+
+[leader] $ git add .
+[exit 0]
+
+[leader] $ git commit -m 'Activity 5: overlapping main-branch changes to demonstrate conflicts'
+[main 36dbd42] Activity 5: overlapping main-branch changes to demonstrate conflicts
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+[exit 0]
+
+[leader] $ git rev-parse HEAD
+36dbd424ea55101cfbb4c2eb5979193331a12586
+[exit 0]
+
+[leader] $ git push origin main:refs/heads/practice/run-40618585451-1/main
+To https://github.com/Sakura-zz26/pratice.git
+   b6a10f6..36dbd42  main -> practice/run-40618585451-1/main
+[exit 0]
+
+[member1] $ git fetch origin
+From https://github.com/Sakura-zz26/pratice
+   b6a10f6..36dbd42  practice/run-40618585451-1/main -> origin/practice/run-40618585451-1/main
+ * [new branch]      practice/run-40618585451-1/member2-rebase -> origin/practice/run-40618585451-1/member2-rebase
+[exit 0]
+
+[member1] $ git rebase origin/practice/run-40618585451-1/main
+Auto-merging member1.html
+CONFLICT (content): Merge conflict in member1.html
+Rebasing (1/1)
+error: could not apply fbe6798... Activity 5: edit the shared member1 paragraph on a feature branch
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+hint: Disable this message with "git config set advice.mergeConflict false"
+Could not apply fbe6798... # Activity 5: edit the shared member1 paragraph on a feature branch
+[exit 1]
+
+[member1] $ git diff --name-only --diff-filter=U
+member1.html
+[exit 0]
+
+[member1] $ git add member1.html
+[exit 0]
+
+[member1] $ git rebase --continue
+[detached HEAD 17c4a83] Activity 5: edit the shared member1 paragraph on a feature branch
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Successfully rebased and updated refs/heads/member1-rebase.
+[exit 0]
+
+[member1] $ git rev-parse HEAD
+17c4a83850a938117b91df1599467826f72dccf2
+[exit 0]
+
+[member1] $ git push --force-with-lease=refs/heads/practice/run-40618585451-1/member1-rebase:fbe679876d6e617959bbdd5f2586d9da2aef22af origin HEAD:refs/heads/practice/run-40618585451-1/member1-rebase
+To https://github.com/Sakura-zz26/pratice.git
+ + fbe6798...17c4a83 HEAD -> practice/run-40618585451-1/member1-rebase (forced update)
+[exit 0]
+
+[leader] $ git fetch origin practice/run-40618585451-1/member1-rebase
+From https://github.com/Sakura-zz26/pratice
+ * branch            practice/run-40618585451-1/member1-rebase -> FETCH_HEAD
+ * [new branch]      practice/run-40618585451-1/member1-rebase -> origin/practice/run-40618585451-1/member1-rebase
+[exit 0]
+
+[leader] $ git merge --no-ff FETCH_HEAD -m 'Activity 5: integrate resolved member 1 feature'
+Merge made by the 'ort' strategy.
+ member1.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[exit 0]
+
+[leader] $ git push origin main:refs/heads/practice/run-40618585451-1/main
+To https://github.com/Sakura-zz26/pratice.git
+   36dbd42..db8d2be  main -> practice/run-40618585451-1/main
+[exit 0]
+
+[member2] $ git fetch origin
+From https://github.com/Sakura-zz26/pratice
+   b6a10f6..db8d2be  practice/run-40618585451-1/main -> origin/practice/run-40618585451-1/main
+ * [new branch]      practice/run-40618585451-1/member1-rebase -> origin/practice/run-40618585451-1/member1-rebase
+[exit 0]
+
+[member2] $ git rebase origin/practice/run-40618585451-1/main
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Rebasing (1/1)
+error: could not apply be1ae39... Activity 5: edit the shared index heading on a feature branch
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+hint: Disable this message with "git config set advice.mergeConflict false"
+Could not apply be1ae39... # Activity 5: edit the shared index heading on a feature branch
+[exit 1]
+
+[member2] $ git diff --name-only --diff-filter=U
+index.html
+[exit 0]
+
+[member2] $ git add index.html
+[exit 0]
+
+[member2] $ git rebase --continue
+[detached HEAD 20f4450] Activity 5: edit the shared index heading on a feature branch
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Successfully rebased and updated refs/heads/member2-rebase.
+[exit 0]
+
+[member2] $ git rev-parse HEAD
+20f4450e65a1b9d185b289bbec8a231dbd49f8a3
+[exit 0]
+
+[member2] $ git push --force-with-lease=refs/heads/practice/run-40618585451-1/member2-rebase:be1ae39296aa71837e624be35a04c0df15f54aed origin HEAD:refs/heads/practice/run-40618585451-1/member2-rebase
+To https://github.com/Sakura-zz26/pratice.git
+ + be1ae39...20f4450 HEAD -> practice/run-40618585451-1/member2-rebase (forced update)
+[exit 0]
+
+[leader] $ git fetch origin practice/run-40618585451-1/member2-rebase
+From https://github.com/Sakura-zz26/pratice
+ * branch            practice/run-40618585451-1/member2-rebase -> FETCH_HEAD
+ * [new branch]      practice/run-40618585451-1/member2-rebase -> origin/practice/run-40618585451-1/member2-rebase
+[exit 0]
+
+[leader] $ git merge --no-ff FETCH_HEAD -m 'Activity 5: integrate resolved member 2 feature'
+Merge made by the 'ort' strategy.
+ index.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[exit 0]
+
+[leader] $ git push origin main:refs/heads/practice/run-40618585451-1/main
+To https://github.com/Sakura-zz26/pratice.git
+   db8d2be..fa0de0d  main -> practice/run-40618585451-1/main
+[exit 0]
+
+[member1] $ git fetch origin
+From https://github.com/Sakura-zz26/pratice
+   36dbd42..fa0de0d  practice/run-40618585451-1/main -> origin/practice/run-40618585451-1/main
+ + be1ae39...20f4450 practice/run-40618585451-1/member2-rebase -> origin/practice/run-40618585451-1/member2-rebase  (forced update)
+[exit 0]
+
+[member1] $ git switch main
+Your branch is behind 'origin/practice/run-40618585451-1/main' by 5 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+Switched to branch 'main'
+[exit 0]
+
+[member1] $ git reset --hard origin/practice/run-40618585451-1/main
+HEAD is now at fa0de0d Activity 5: integrate resolved member 2 feature
+[exit 0]
+
+[member1] $ git branch -d member1-feature
+Deleted branch member1-feature (was 61def8a).
+[exit 0]
+
+[member1] $ git branch -d member1-rebase
+Deleted branch member1-rebase (was 17c4a83).
+[exit 0]
+
+[member2] $ git fetch origin
+From https://github.com/Sakura-zz26/pratice
+   db8d2be..fa0de0d  practice/run-40618585451-1/main -> origin/practice/run-40618585451-1/main
+[exit 0]
+
+[member2] $ git switch main
+Your branch is behind 'origin/practice/run-40618585451-1/main' by 5 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+Switched to branch 'main'
+[exit 0]
+
+[member2] $ git reset --hard origin/practice/run-40618585451-1/main
+HEAD is now at fa0de0d Activity 5: integrate resolved member 2 feature
+[exit 0]
+
+[member2] $ git branch -d member2-feature
+Deleted branch member2-feature (was 811641a).
+[exit 0]
+
+[member2] $ git branch -d member2-rebase
+Deleted branch member2-rebase (was 20f4450).
+[exit 0]
+
+[leader] $ git branch -d leader-feature
+Deleted branch leader-feature (was 40c657c).
+[exit 0]
+
+[leader] $ git rev-parse HEAD
+fa0de0d908da42c3ff66efb3a41d2ae75257b1a5
+[exit 0]
+
+[leader] $ git rev-parse HEAD
+fa0de0d908da42c3ff66efb3a41d2ae75257b1a5
+[exit 0]
+
+[member1] $ git rev-parse HEAD
+fa0de0d908da42c3ff66efb3a41d2ae75257b1a5
+[exit 0]
+
+[member2] $ git rev-parse HEAD
+fa0de0d908da42c3ff66efb3a41d2ae75257b1a5
+[exit 0]
+
+[leader] $ git fetch origin
+[exit 0]
+
+[leader] $ git log --graph --oneline --all -40
+*   fa0de0d Activity 5: integrate resolved member 2 feature
+|\  
+| * 20f4450 Activity 5: edit the shared index heading on a feature branch
+|/  
+*   db8d2be Activity 5: integrate resolved member 1 feature
+|\  
+| * 17c4a83 Activity 5: edit the shared member1 paragraph on a feature branch
+|/  
+* 36dbd42 Activity 5: overlapping main-branch changes to demonstrate conflicts
+| * ac5cfca Activity 4: unnecessary commit for reset demonstration
+|/  
+* b6a10f6 Revert "Activity 4: accidental addition for revert demonstration"
+* ff54575 Activity 4: accidental addition for revert demonstration
+* 7f195ce Activity 4: correct title and add missing description
+| * 7e96a46 Activity 4: title update before amendment
+|/  
+*   7b3f131 Activity 3: merge member 2 feature
+|\  
+| * 811641a Activity 3: add simulated member 2 feature
+|/  
+*   b755ed2 Activity 3: merge member 1 feature
+|\  
+| * 61def8a Activity 3: add simulated member 1 feature
+|/  
+*   93f1d75 Activity 3: merge leader feature
+|\  
+| * 40c657c Activity 3: add leader HTML feature
+|/  
+* 392a34a Activity 2: commit from simulated member 2 workspace
+* 64a672d Activity 2: commit from simulated member 1 workspace
+* 517b08c Activity 1: initialize solo practice repository
+* be9d663 Add Codex-assisted solo Git and workflow practical activities
+* 1fc23f6 Initial commit
+[exit 0]
+
+[leader] $ git fsck --full
+[exit 0]
+
+[leader] $ git bundle create /home/runner/work/pratice/pratice/evidence/lecture1/lecture1-history.bundle --all
+[exit 0]
+
+[leader] $ git bundle verify /home/runner/work/pratice/pratice/evidence/lecture1/lecture1-history.bundle
+The bundle contains these 12 refs:
+fa0de0d908da42c3ff66efb3a41d2ae75257b1a5 refs/heads/main
+be9d663da6afc492976498c2908102af16704dd2 refs/remotes/origin/HEAD
+be9d663da6afc492976498c2908102af16704dd2 refs/remotes/origin/main
+7e96a467eda4816c2363e1fa8c25277cb30020ae refs/remotes/origin/practice/run-40618585451-1/before-amend
+ac5cfcac502063c73994c61708d5d0e5fc5a019f refs/remotes/origin/practice/run-40618585451-1/before-reset
+40c657c84e7d4896e4e9352764ce3c500015723e refs/remotes/origin/practice/run-40618585451-1/leader-feature
+fa0de0d908da42c3ff66efb3a41d2ae75257b1a5 refs/remotes/origin/practice/run-40618585451-1/main
+61def8ac316c909619d021075f5c032f53870aa3 refs/remotes/origin/practice/run-40618585451-1/member1-feature
+17c4a83850a938117b91df1599467826f72dccf2 refs/remotes/origin/practice/run-40618585451-1/member1-rebase
+811641a43289578c35caa9d52c37be85872d6b44 refs/remotes/origin/practice/run-40618585451-1/member2-feature
+20f4450e65a1b9d185b289bbec8a231dbd49f8a3 refs/remotes/origin/practice/run-40618585451-1/member2-rebase
+fa0de0d908da42c3ff66efb3a41d2ae75257b1a5 HEAD
+The bundle records a complete history.
+The bundle uses this hash algorithm: sha1
+/home/runner/work/pratice/pratice/evidence/lecture1/lecture1-history.bundle is okay
+[exit 0]
