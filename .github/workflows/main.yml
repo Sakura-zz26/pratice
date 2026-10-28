@@ -1,0 +1,103 @@
+name: GitHub Practical Activities
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: github-practicals-main
+  cancel-in-progress: false
+
+jobs:
+  update_html_and_readme:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Test the record updater
+        run: python3 -m unittest discover -s scripts -p 'test_*.py' -v
+
+      - name: Complete Lecture 1 Git practical activities
+        env:
+          PRACTICE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PRACTICE_REPOSITORY: ${{ github.repository }}
+          PRACTICE_RUN_ID: ${{ github.run_id }}-${{ github.run_attempt }}
+        run: python3 scripts/run_git_practicals.py
+
+      - name: Update HTML for the workflow actor
+        run: python3 scripts/update_records.py html
+
+      - name: Update README with actor and source commit
+        run: python3 scripts/update_records.py readme
+
+      - name: Verify generated files
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          result = json.loads(Path('evidence/lecture1/results.json').read_text())
+          assert all(item['status'] == 'passed' for item in result['activities'])
+          assert len(result['conflicts']) == 2
+          assert 'Updated by' in Path('index.html').read_text()
+          assert '### Updated by' in Path('README.md').read_text()
+          print('All five Git activities, two conflicts and both generated updates verified.')
+          PY
+
+      - name: Commit and push generated changes
+        env:
+          ACTOR: ${{ github.actor }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html README.md evidence/lecture1/results.json evidence/lecture1/commands.log evidence/lecture1/summary.md
+          if git diff --cached --quiet; then
+            echo 'No generated changes to commit.'
+          else
+            git commit -m "Workflow: Update HTML and README for ${ACTOR}"
+            git push origin HEAD:main
+          fi
+
+      - name: Upload Git practical evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: git-practical-evidence
+          path: evidence/lecture1/
+          retention-days: 14
+
+      - name: Prepare static pages
+        if: vars.ENABLE_PAGES == 'true'
+        run: |
+          mkdir -p _site
+          cp index.html leader.html member1.html member2.html _site/
+
+      - name: Upload Pages artifact
+        if: vars.ENABLE_PAGES == 'true'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy_pages:
+    if: vars.ENABLE_PAGES == 'true'
+    needs: update_html_and_readme
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
